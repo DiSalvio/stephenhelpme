@@ -1,0 +1,11 @@
+<h1>Stephen is</h1>
+<div class="place">
+  <%= @place.name %>
+</div>
+<div class="time">
+  <%= "Updated #{time_ago_in_words(@place.updated_at)} ago"%>
+</div>
+<% if admin_signed_in? %>
+  <%= link_to "Log Out", destroy_admin_session_path, method: :delete %>
+  <%= link_to "Update Place", new_place_path %>
+<% end %>
