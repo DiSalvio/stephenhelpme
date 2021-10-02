@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @place = Place.last
+    @place = Place.last 
   end
 end

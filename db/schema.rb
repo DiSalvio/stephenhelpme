@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_09_10_105827) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_105827) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "admin_id", null: false
+    t.bigint "admin_id", null: false
     t.index ["admin_id"], name: "index_places_on_admin_id"
   end
 
